@@ -1,21 +1,20 @@
+/* src/styles/components/layouts/header.css - UPDATE grid positioning */
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* border-bottom: 1px solid var(--color-border-default); */
   background-color: var(--color-bg-app);
   grid-row: 1;
+  padding: 0 1rem;
+  height: 60px;
 }
 
-/* Desktop header positioning */
+/* Desktop header positioning - span all columns */
 @media (min-width: 769px) {
-  .header--sidebar-expanded {
-    grid-column: 2;
+  .header {
+    grid-column: 1 / -1; /* Span all columns */
   }
-
-  .header--sidebar-collapsed {
-    grid-column: 1;
-  }
+  
   /* Platform-specific adjustments for window controls */
   /* macOS - avoid traffic lights on the left */
   .header--darwin.header--sidebar-collapsed {
@@ -54,6 +53,11 @@
   cursor: pointer;
   border-radius: 4px;
   color: var(--color-text-high);
+  transition: all 0.2s ease;
+}
+
+.header__toggle:hover {
+  background-color: var(--color-bg-hover);
 }
 
 .header__toggle--hidden {
@@ -66,4 +70,3 @@
   font-weight: 600;
   color: var(--color-text-high);
 }
-

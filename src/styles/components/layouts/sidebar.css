@@ -1,8 +1,10 @@
+/* src/styles/components/layouts/sidebar.css - UPDATE grid positioning */
 .sidebar {
   background-color: var(--color-bg-surface);
   border-right: 1px solid var(--color-border-default);
   padding: 1rem;
   overflow: hidden;
+  position: relative; /* Add for resize handle positioning */
 }
 
 /* Desktop sidebar */
@@ -10,6 +12,7 @@
   .sidebar {
     grid-column: 1;
     grid-row: 1 / -1;
+    min-width: 200px; /* Enforce minimum width */
   }
 }
 
@@ -46,6 +49,11 @@
   cursor: pointer;
   border-radius: 4px;
   color: var(--color-text-high);
+  transition: all 0.2s ease;
+}
+
+.sidebar__toggle:hover {
+  background-color: var(--color-bg-hover);
 }
 
 .sidebar__separator {
@@ -57,4 +65,6 @@
 .sidebar__content {
   padding: 0.5rem;
   color: var(--color-text-low);
+  overflow-y: auto;
+  height: calc(100% - 60px); /* Account for header */
 }

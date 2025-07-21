@@ -3,6 +3,8 @@
   padding: 1rem;
   background-color: var(--color-bg-app);
   overflow: auto;
+  position: relative; /* Add for proper layout context */
+  min-width: 0; /* Prevent flex/grid blowout */
 }
 
 /* Desktop editor positioning */
@@ -12,7 +14,13 @@
   }
 
   .editor-layout--sidebar-collapsed {
-    grid-column: 1;
+    grid-column: 1 / span 2; /* Span both columns when sidebar collapsed */
+  }
+  
+  /* Ensure editor takes full available space */
+  .editor-layout {
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -20,6 +28,7 @@
 @media (max-width: 768px) {
   .editor-layout {
     grid-column: 1;
+    grid-row: 2;
   }
 }
 
@@ -30,4 +39,5 @@
   text-align: center;
   color: var(--color-text-low);
   background-color: var(--color-bg-surface);
+  margin-bottom: 1rem;
 }
