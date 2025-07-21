@@ -1,0 +1,17 @@
+.right-panel {
+  grid-column: 3;
+  grid-row: 1 / -1;
+  background-color: var(--color-bg-surface);
+  border-left: 1px solid var(--color-border-default);
+  padding: 1rem;
+  overflow: auto;
+}
+
+.right-panel__placeholder {
+  padding: 1rem;
+  border: 2px dashed var(--color-border-subtle);
+  border-radius: 8px;
+  text-align: center;
+  color: var(--color-text-low);
+  background-color: var(--color-bg-subtle);
+}

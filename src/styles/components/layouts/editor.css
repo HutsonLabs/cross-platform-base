@@ -1,0 +1,23 @@
+.editor-layout {
+  grid-row: 2;
+  padding: 1rem;
+  background-color: var(--color-bg-app);
+  overflow: auto;
+}
+
+.editor-layout--sidebar-expanded {
+  grid-column: 2;
+}
+
+.editor-layout--sidebar-collapsed {
+  grid-column: 1;
+}
+
+.editor-layout__placeholder {
+  padding: 1rem;
+  border: 2px dashed var(--color-border-default);
+  border-radius: 8px;
+  text-align: center;
+  color: var(--color-text-low);
+  background-color: var(--color-bg-surface);
+}
