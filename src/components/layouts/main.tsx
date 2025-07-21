@@ -3,6 +3,7 @@ import Header from './header';
 import Sidebar from './sidebar';
 import Editor from './editor';
 import RightPanel from './rightpanel';
+import './../../styles/components/layouts/main.css';
 
 interface MainLayoutProps {
   children: React.ReactNode;
@@ -13,15 +14,11 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   const [rightPanelOpen, setRightPanelOpen] = useState(false);
 
   return (
-    <div style={{ 
-      height: '100vh', 
-      display: 'grid', 
-      gridTemplateColumns: sidebarCollapsed 
-        ? `1fr ${rightPanelOpen ? '300px' : '0px'}` 
-        : `250px 1fr ${rightPanelOpen ? '300px' : '0px'}`,
-      gridTemplateRows: '60px 1fr',
-      transition: 'grid-template-columns 0.2s ease'
-    }}>
+    <div className={`
+        main-layout 
+        ${sidebarCollapsed ? 'main-layout--sidebar-collapsed' : 'main-layout--sidebar-expanded'}
+        ${rightPanelOpen ? 'main-layout--right-panel-open' : ''}
+      `.trim()}>
       {!sidebarCollapsed && (
         <Sidebar 
           collapsed={sidebarCollapsed} 

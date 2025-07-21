@@ -1,0 +1,22 @@
+.main-layout {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 60px 1fr;
+  transition: grid-template-columns 0.2s ease;
+}
+
+.main-layout--sidebar-expanded {
+  grid-template-columns: 250px 1fr 0px;
+}
+
+.main-layout--sidebar-collapsed {
+  grid-template-columns: 1fr 0px;
+}
+
+.main-layout--sidebar-expanded.main-layout--right-panel-open {
+  grid-template-columns: 250px 1fr 300px;
+}
+
+.main-layout--sidebar-collapsed.main-layout--right-panel-open {
+  grid-template-columns: 1fr 300px;
+}
