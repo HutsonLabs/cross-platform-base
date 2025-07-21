@@ -9,7 +9,6 @@ html {
 }
 
 body {
-  /* padding-top: env(safe-area-inset-top); */
   min-height: 100vh;
   min-height: 100dvh;
 }
@@ -20,7 +19,7 @@ html, body, #root {
   padding: 0;
   font-family: "Avenir Next",-apple-system, sans-serif;
   background-color: var(--color-bg-app);
-  color: var(--color-text-high);
+  color: var(--color-text);
 }
 
 .App {
@@ -33,5 +32,5 @@ button:hover {
 }
 
 button:active {
-  background-color: var(--color-bg-pressed);
+  opacity: 0.9;
 }

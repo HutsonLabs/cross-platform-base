@@ -1,59 +1,28 @@
-/* Import Radix UI Colors - Light mode */
-@import '@radix-ui/colors/slate.css';
-@import '@radix-ui/colors/blue.css';
-@import '@radix-ui/colors/gray.css';
-
-/* Import Radix UI Colors - Dark mode */
-@import '@radix-ui/colors/slate-dark.css';
-@import '@radix-ui/colors/blue-dark.css';
-@import '@radix-ui/colors/gray-dark.css';
-
-/* Color tokens for consistent usage */
 :root {
-  /* Background colors */
-  --color-bg-app: var(--gray-1);
-  --color-bg-subtle: var(--gray-2);
-  --color-bg-surface: var(--gray-3);
-  --color-bg-hover: var(--gray-4);
-  --color-bg-pressed: var(--gray-5);
-  
-  /* Border colors */
-  --color-border-subtle: var(--gray-6);
-  --color-border-default: var(--gray-7);
-  --color-border-hover: var(--gray-8);
-  
-  /* Text colors */
-  --color-text-low: var(--gray-11);
-  --color-text-high: var(--gray-12);
-  
-  /* Accent colors */
-  --color-accent-bg: var(--blue-4);
-  --color-accent-hover: var(--blue-5);
-  --color-accent-solid: var(--blue-9);
-  --color-accent-text: var(--blue-11);
-}
+  --primary: #181a1b;
+  --accent: #3c9cfb;
+  --text: #a5a5a6;
 
-/* Dark mode support */
-.dark {
+
   /* Background colors */
-  --color-bg-app: var(--gray-1);
-  --color-bg-subtle: var(--gray-2);
-  --color-bg-surface: var(--gray-3);
-  --color-bg-hover: var(--gray-4);
-  --color-bg-pressed: var(--gray-5);
+  --color-bg-app: var(--primary);
+  --color-bg-subtle: color-mix(in srgb, var(--primary) 60%, black);
+  --color-bg-surface: color-mix(in srgb, var(--primary) 80%, black);
+  --color-bg-hover: color-mix(in srgb, var(--primary) 95%, white);
+  --color-bg-pressed: color-mix(in srgb, var(--primary) 90%, white);
   
   /* Border colors */
-  --color-border-subtle: var(--gray-6);
-  --color-border-default: var(--gray-7);
-  --color-border-hover: var(--gray-8);
+  --color-border-subtle: color-mix(in srgb, var(--color-bg-subtle) 80%, black);
+  --color-border-default: color-mix(in srgb, var(--color-bg-app) 80%, black);
+  --color-border-hover: color-mix(in srgb, var(--color-bg-subtle) 80%, black);
   
   /* Text colors */
-  --color-text-low: var(--gray-11);
-  --color-text-high: var(--gray-12);
+  --color-text-low: var(--text);
+  --color-text-high: color-mix(in srgb, var(--text) 80%, black);
   
   /* Accent colors */
-  --color-accent-bg: var(--blue-4);
-  --color-accent-hover: var(--blue-5);
-  --color-accent-solid: var(--blue-9);
-  --color-accent-text: var(--blue-11);
+  --color-accent-bg: var(--accent);
+  --color-accent-hover: color-mix(in srgb, var(--accent) 95%, black);
+  --color-accent-solid: color-mix(in srgb, var(--accent) 90%, black);
+  --color-accent-text: color-mix(in srgb, var(--accent) 80%, black);
 }
