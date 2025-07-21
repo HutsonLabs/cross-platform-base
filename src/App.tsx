@@ -1,12 +1,13 @@
 import React from 'react';
-import Welcome from './components/Welcome';
+import Layout from './components/layouts/main';
+import Editor from './pages/editor';
 import './styles/App.css';
 
 function App() {
   return (
-    <div className="App">
-      <Welcome />
-    </div>
+    <Layout>
+      <Editor />
+    </Layout>
   );
 }
 
