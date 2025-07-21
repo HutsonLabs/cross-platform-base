@@ -3,6 +3,7 @@ import Header from './header';
 import Sidebar from './sidebar';
 import Editor from './editor';
 import RightPanel from './rightpanel';
+import TitleBar from './titlebar';
 import './../../styles/components/layouts/main.css';
 
 interface MainLayoutProps {
@@ -14,6 +15,8 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   const [rightPanelOpen, setRightPanelOpen] = useState(false);
 
   return (
+    <>
+    <TitleBar />
     <div className={`
         main-layout 
         ${sidebarCollapsed ? 'main-layout--sidebar-collapsed' : 'main-layout--sidebar-expanded'}
@@ -44,6 +47,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
         />
       )}
     </div>
+    </>
   );
 };
 

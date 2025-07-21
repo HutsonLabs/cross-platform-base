@@ -2,8 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1rem;
-  border-bottom: 1px solid var(--color-border-default);
+  /* border-bottom: 1px solid var(--color-border-default); */
   background-color: var(--color-bg-subtle);
   grid-row: 1;
 }
@@ -16,6 +15,21 @@
 
   .header--sidebar-collapsed {
     grid-column: 1;
+  }
+  /* Platform-specific adjustments for window controls */
+  /* macOS - avoid traffic lights on the left */
+  .header--darwin.header--sidebar-collapsed {
+    padding-left: 80px;
+  }
+
+  .header--darwin.header--sidebar-collapsed .header__left {
+    margin-left: 0;
+  }
+
+  /* Windows/Linux - avoid window controls on the right */
+  .header--win32,
+  .header--linux {
+    padding-right: 140px;
   }
 }
 
@@ -51,3 +65,4 @@
   font-weight: 600;
   color: var(--color-text-high);
 }
+

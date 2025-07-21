@@ -4,6 +4,16 @@
   box-sizing: border-box;
 }
 
+html {
+  background-color: var(--color-bg-app);
+}
+
+body {
+  /* padding-top: env(safe-area-inset-top); */
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
 html, body, #root {
   height: 100%;
   margin: 0;

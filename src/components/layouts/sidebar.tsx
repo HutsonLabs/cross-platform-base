@@ -15,7 +15,6 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed, onToggleSidebar }) => {
       <nav className="sidebar__nav">
         <div className="sidebar__header">
           <div className="sidebar__title">
-            Sidebar Navigation
           </div>
           {/* Show close toggle in upper right when sidebar is visible */}
           {onToggleSidebar && (
@@ -28,9 +27,12 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed, onToggleSidebar }) => {
             </Toggle.Root>
           )}
         </div>
-        <Separator.Root className="sidebar__separator" />
         <div className="sidebar__content">
-          Navigation items will go here
+          <div className="right-panel__placeholder">
+            Sidebar Content
+            <br />
+            <small>Column 1 - Navigation view</small>
+          </div>
         </div>
       </nav>
     </div>

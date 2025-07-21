@@ -22,7 +22,7 @@ const RightPanel: React.FC<RightPanelProps> = ({ sidebarCollapsed, onToggleRight
             <X size={20} />
           </Toggle.Root>
         )}
-        <div className="right-panel__title">Right Panel</div>
+        <div className="right-panel__title"></div>
       </div>
       <div className="right-panel__placeholder">
         Right Panel Content

@@ -1,0 +1,61 @@
+.titlebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 32px;
+  background-color: transparent;
+  z-index: 1000;
+}
+
+.titlebar-drag-region {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  -webkit-app-region: drag;
+}
+
+/* Prevent drag on interactive elements */
+.titlebar button,
+.titlebar input,
+.titlebar a {
+  -webkit-app-region: no-drag;
+}
+
+/* macOS specific */
+.titlebar--darwin {
+  padding-left: 80px; /* Space for traffic lights */
+}
+
+.titlebar--darwin .titlebar-content {
+  text-align: center;
+}
+
+/* Windows/Linux specific */
+.titlebar--win32,
+.titlebar--linux {
+  padding-right: 140px; /* Space for window controls */
+}
+
+.titlebar--win32 .titlebar-content,
+.titlebar--linux .titlebar-content {
+  text-align: left;
+  padding-left: 12px;
+}
+
+.titlebar-content {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: var(--gray-11);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Ensure main content is pushed down */
+.main-layout {
+  padding-top: 32px;
+}

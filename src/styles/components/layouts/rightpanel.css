@@ -8,6 +8,7 @@
 /* Desktop right panel */
 @media (min-width: 769px) {
   .right-panel {
+    grid-column: 1;
     grid-row: 1 / -1;
   }
 

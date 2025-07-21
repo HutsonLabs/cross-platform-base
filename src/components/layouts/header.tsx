@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import * as Toggle from '@radix-ui/react-toggle';
 import { PanelLeft, CircleCheck, X } from 'lucide-react';
 import './../../styles/components/layouts/header.css';
@@ -16,8 +16,16 @@ const Header: React.FC<HeaderProps> = ({
   rightPanelOpen, 
   onToggleRightPanel 
 }) => {
+  const [platform, setPlatform] = useState<string>('');
+
+  useEffect(() => {
+    if (window.electronAPI?.platform) {
+      setPlatform(window.electronAPI.platform);
+    }
+  }, []);
+
   return (
-    <div className={`header ${sidebarCollapsed ? 'header--sidebar-collapsed' : 'header--sidebar-expanded'}`}>
+    <div className={`header header--${platform} ${sidebarCollapsed ? 'header--sidebar-collapsed' : 'header--sidebar-expanded'}`}>
       <div className="header__left">
         {/* Show sidebar toggle only when sidebar is collapsed */}
         {sidebarCollapsed && (

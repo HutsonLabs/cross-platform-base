@@ -1,5 +1,7 @@
 .main-layout {
   height: 100vh;
+  height: 100dvh; /* Dynamic viewport height for mobile */
+  padding-top: env(safe-area-inset-top); /* iOS status bar */
   display: grid;
   grid-template-rows: 60px 1fr;
   transition: grid-template-columns 0.2s ease;
