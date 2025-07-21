@@ -5,12 +5,22 @@
   overflow: auto;
 }
 
-.editor-layout--sidebar-expanded {
-  grid-column: 2;
+/* Desktop editor positioning */
+@media (min-width: 769px) {
+  .editor-layout--sidebar-expanded {
+    grid-column: 2;
+  }
+
+  .editor-layout--sidebar-collapsed {
+    grid-column: 1;
+  }
 }
 
-.editor-layout--sidebar-collapsed {
-  grid-column: 1;
+/* Mobile editor positioning */
+@media (max-width: 768px) {
+  .editor-layout {
+    grid-column: 1;
+  }
 }
 
 .editor-layout__placeholder {

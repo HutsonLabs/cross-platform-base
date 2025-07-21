@@ -21,7 +21,8 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
       `.trim()}>
       {!sidebarCollapsed && (
         <Sidebar 
-          collapsed={sidebarCollapsed} 
+          collapsed={sidebarCollapsed}
+          onToggleSidebar={setSidebarCollapsed}
         />
       )}
       
@@ -36,7 +37,12 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
         {children}
       </Editor>
       
-      {rightPanelOpen && <RightPanel />}
+      {rightPanelOpen && (
+        <RightPanel 
+          sidebarCollapsed={sidebarCollapsed}
+          onToggleRightPanel={setRightPanelOpen}
+        />
+      )}
     </div>
   );
 };

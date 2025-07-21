@@ -1,6 +1,6 @@
 import React from 'react';
 import * as Toggle from '@radix-ui/react-toggle';
-import { Menu, X } from 'lucide-react';
+import { PanelLeft, CircleCheck, X } from 'lucide-react';
 import './../../styles/components/layouts/header.css';
 
 interface HeaderProps {
@@ -18,25 +18,29 @@ const Header: React.FC<HeaderProps> = ({
 }) => {
   return (
     <div className={`header ${sidebarCollapsed ? 'header--sidebar-collapsed' : 'header--sidebar-expanded'}`}>
-        <div className="header__left">
-            <Toggle.Root
-                pressed={sidebarCollapsed}
-                onPressedChange={onToggleSidebar}
-                className="header__toggle"
-                >
-                    <Menu size={20} />
-            </Toggle.Root>
-            <h1 className="header__title">
-            App Header
-            </h1>
-        </div>
-        <Toggle.Root
-            pressed={rightPanelOpen}
-            onPressedChange={onToggleRightPanel}
+      <div className="header__left">
+        {/* Show sidebar toggle only when sidebar is collapsed */}
+        {sidebarCollapsed && (
+          <Toggle.Root
+            pressed={false}
+            onPressedChange={() => onToggleSidebar(false)}
             className="header__toggle"
-            >
-            {rightPanelOpen ? <X size={20} /> : <Menu size={20} />}
+          >
+            <PanelLeft size={20} />
+          </Toggle.Root>
+        )}
+      </div>
+      
+      {/* Show right panel toggle only when right panel is closed */}
+      {!rightPanelOpen && (
+        <Toggle.Root
+          pressed={false}
+          onPressedChange={() => onToggleRightPanel(true)}
+          className="header__toggle"
+        >
+          <CircleCheck size={20} />
         </Toggle.Root>
+      )}
     </div>
   );
 };
