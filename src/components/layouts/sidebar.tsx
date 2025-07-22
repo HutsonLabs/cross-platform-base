@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import * as Separator from '@radix-ui/react-separator';
 import * as Toggle from '@radix-ui/react-toggle';
 import { PanelLeft, Home, FolderOpen, Settings, HelpCircle } from 'lucide-react';
 import SettingsModal from './modal';
