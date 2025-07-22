@@ -63,8 +63,244 @@
 }
 
 .sidebar__content {
-  padding: 0.5rem;
+  padding: 0;
   color: var(--color-text-low);
   overflow-y: auto;
-  height: calc(100% - 60px); /* Account for header */
+  height: calc(100% - 80px); /* Account for header and separator */
+}
+
+/* Navigation Menu Styles */
+.sidebar__menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar__menu-item {
+  margin-bottom: 0.25rem;
+}
+
+.sidebar__menu-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--color-text-medium);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.sidebar__menu-link:hover {
+  background-color: var(--color-bg-hover);
+  color: var(--color-text-high);
+}
+
+.sidebar__menu-link:focus {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: -2px;
+}
+
+.sidebar__menu-icon {
+  flex-shrink: 0;
+  color: inherit;
+}
+
+.sidebar__menu-label {
+  flex: 1;
+  color: inherit;
+}
+
+/* Add to existing sidebar.css */
+
+/* Settings Footer */
+.sidebar__footer {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.sidebar__settings-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-medium);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.sidebar__settings-button:hover {
+  background-color: var(--color-bg-hover);
+  color: var(--color-text-high);
+}
+
+.sidebar__settings-button:focus {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+/* Settings Modal */
+.settings-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 200ms ease-out;
+}
+
+.settings-modal__backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.settings-modal__container {
+  position: relative;
+  /* background-color: var(--color-bg-surface); */
+  border-radius: 12px;
+  /* box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); */
+  width: 90vw;
+  max-width: 500px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 200ms ease-out;
+}
+
+/* Mobile: Full-screen experience */
+@media (max-width: 768px) {
+  .settings-modal__container {
+    width: 100vw;
+    height: 100vh;
+    max-width: none;
+    max-height: none;
+    border-radius: 0;
+  }
+}
+
+.settings-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  /* border-bottom: 1px solid var(--color-border-subtle); */
+  flex-shrink: 0;
+}
+
+.settings-modal__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text-high);
+  margin: 0;
+}
+
+.settings-modal__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--color-text-medium);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.settings-modal__close:hover {
+  background-color: var(--color-bg-hover);
+  color: var(--color-text-high);
+}
+
+.settings-modal__close:focus {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.settings-modal__body {
+  padding: 1.5rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px) scale(0.95);
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Mobile animation - slide up from bottom */
+@media (max-width: 768px) {
+  @keyframes slideUp {
+    from { 
+      opacity: 0; 
+      transform: translateY(100%);
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Add only these new styles to existing sidebar.css */
+
+/* Settings Footer */
+.sidebar__footer {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.sidebar__settings-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-medium);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.sidebar__settings-button:hover {
+  background-color: var(--color-bg-hover);
+  color: var(--color-text-high);
+}
+
+.sidebar__settings-button:focus {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
 }
