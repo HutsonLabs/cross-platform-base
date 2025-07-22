@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import * as Toggle from '@radix-ui/react-toggle';
-import { PanelLeft, CircleCheck, X } from 'lucide-react';
+import { PanelLeftOpen, CircleCheck, X } from 'lucide-react';
 import './../../styles/components/layouts/header.css';
 
 interface HeaderProps {
@@ -34,7 +34,7 @@ const Header: React.FC<HeaderProps> = ({
             onPressedChange={() => onToggleSidebar(false)}
             className="header__toggle"
           >
-            <PanelLeft size={20} />
+            <PanelLeftOpen size={20} />
           </Toggle.Root>
         )}
       </div>

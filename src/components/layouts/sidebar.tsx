@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import * as Toggle from '@radix-ui/react-toggle';
-import { PanelLeft, Home, FolderOpen, Settings, HelpCircle } from 'lucide-react';
+import { PanelLeftClose, Home, FolderOpen, Settings, Lightbulb, Library } from 'lucide-react';
 import SettingsModal from './modal';
 import './../../styles/components/layouts/sidebar.css';
 
@@ -15,8 +15,8 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed, onToggleSidebar }) => {
   const navigationItems = [
     { icon: Home, label: 'Home', href: '/' },
     { icon: FolderOpen, label: 'Projects', href: '/projects' },
-    { icon: Settings, label: 'Settings', href: '/settings' },
-    { icon: HelpCircle, label: 'Help', href: '/help' }
+    { icon: Lightbulb, label: 'Ideas', href: '/settings' },
+    { icon: Library, label: 'Journal', href: '/help' }
   ];
 
   return (
@@ -32,7 +32,7 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed, onToggleSidebar }) => {
                 onPressedChange={() => onToggleSidebar(true)}
                 className="sidebar__toggle"
               >
-                <PanelLeft size={20} />
+                <PanelLeftClose size={20} />
               </Toggle.Root>
             )}
           </div>

@@ -9,27 +9,28 @@
   height: 60px;
 }
 
+/* Platform-specific adjustments for window controls */
+/* macOS - avoid traffic lights on the left */
+.header--darwin.header--sidebar-collapsed {
+  padding-left: 80px;
+}
+
+.header--darwin.header--sidebar-collapsed .header__left {
+  margin-left: 0;
+}
+
+/* Windows/Linux - avoid window controls on the right */
+.header--win32,
+.header--linux {
+  padding-right: 140px;
+}
+
 /* Desktop header positioning - span all columns */
 @media (min-width: 769px) {
   .header {
     grid-column: 1 / -1; /* Span all columns */
   }
   
-  /* Platform-specific adjustments for window controls */
-  /* macOS - avoid traffic lights on the left */
-  .header--darwin.header--sidebar-collapsed {
-    padding-left: 80px;
-  }
-
-  .header--darwin.header--sidebar-collapsed .header__left {
-    margin-left: 0;
-  }
-
-  /* Windows/Linux - avoid window controls on the right */
-  .header--win32,
-  .header--linux {
-    padding-right: 140px;
-  }
 }
 
 /* Mobile header positioning */

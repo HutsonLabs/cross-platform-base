@@ -1,6 +1,6 @@
 import React from 'react';
 import * as Toggle from '@radix-ui/react-toggle';
-import { X } from 'lucide-react';
+import { PanelRightClose } from 'lucide-react';
 import './../../styles/components/layouts/rightpanel.css';
 
 interface RightPanelProps {
@@ -19,7 +19,7 @@ const RightPanel: React.FC<RightPanelProps> = ({ sidebarCollapsed, onToggleRight
             onPressedChange={() => onToggleRightPanel(false)}
             className="right-panel__toggle"
           >
-            <X size={20} />
+            <PanelRightClose size={20} />
           </Toggle.Root>
         )}
         <div className="right-panel__title"></div>
